@@ -244,14 +244,14 @@ RGBA ESPColorx = { 255, 45, 0, 150 };
 
 namespace Settings {
 
-	bool Aimbot = true, Prediction = true, DrawFOV = true, Box = true, Esp_Line = true, Cross_Hair = true, Distance_Esp = true, ESP_Player = true, Skeleton = true, Lock_Line = false, Auto_Fire = false;
+	bool Aimbot = true, Prediction = true, DrawFOV = true, Box = true, Esp_Line = false, Cross_Hair = false, Distance_Esp = false, ESP_Player = true, Skeleton = true, Lock_Line = false, Auto_Fire = false;
 	bool LineS = true, Dist = true;
-	float distance, MaxSkeletonDrawDistance = 60, EspDistance = 60, AimbotDistance = 60;
+	float distance, MaxSkeletonDrawDistance = 500, EspDistance = 500, AimbotDistance = 100;
 	int  hitbox = 0;
 
 	bool bMouseAimbotEnabled = false, bLineESPEnabled = false, bDistanceESP = false, bDrawFOV = false, bVisualName = false, bBox = false, outline = false, skel = false;
 	int bBoxMode = false, showhead = false;
-	float AimbotFOVValue = 120.0f, AimbotSmoothingValue = 3.0f;
+	float AimbotFOVValue = 120.0f, AimbotSmoothingValue = 1.0f;
 
 	
 
@@ -264,10 +264,10 @@ namespace Settings {
 
 	ImFont* SkeetFont;
 	float BoxCornerESP[3] = { color.RGBRed[0], color.RGBRed[1], color.RGBRed[2] };
-	float DrawFOVCircle[4] = { color.White[0], color.White[1], color.White[2] };
-	float LineESP[3] = { color.RGBBlue[0], color.RGBBlue[1], color.RGBBlue[2] };
+	float DrawFOVCircle[4] = { color.Black[0], color.Black[1], color.Black[2] };
+	float LineESP[3] = { color.VioletMagenta[0], color.VioletMagenta[1], color.VioletMagenta[2] };
 	float CrossHair[3] = { color.White[0], color.White[1], color.White[2] };
-	float Thickness = 1.5f;
+	float Thickness = 3.0f;
 	float Shape = 50.0f;
 	namespace Majors {
 		uintptr_t LocalPlayer = 0, LocalPawn = 0, LocalPawnRootComponent = 0;

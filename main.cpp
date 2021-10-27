@@ -42,9 +42,7 @@
 #include <stdio.h>
 #include "zStr.h"
 
-// Blatant fortnite paste with the cruz's modified driver of sam tulach's efi driver
-// No particular reason for doing this, just thought i will cause was bored and didnt see any fortnite sources utlizing this driver
-// Hmu on discord (Chase.#1803) if you need any help :)
+
 
 IDirect3D9Ex* p_Object = NULL;
 IDirect3DDevice9* p_Device = NULL;
@@ -78,44 +76,7 @@ void CleanD3D();
 
 // Hmu on discord (Chase.#1803) if you need any help :)
 
-void randomize()
-{
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
-	SetConsoleTitleA(random_string(12).c_str());
-	Sleep(50);
 
-
-
-}
 
 Vector3 AimbotCorrection(float bulletVelocity, float bulletGravity, float targetDistance, Vector3 targetPosition, Vector3 targetVelocity) {
 	Vector3 recalculated = targetPosition;
@@ -166,84 +127,7 @@ HRESULT DirectXInit(HWND hWnd) {
 	ImGui_ImplWin32_Init(MyWnd);
 	ImGui_ImplDX9_Init(p_Device);
 
-	ImGui::StyleColorsClassic();
-
-	io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\Verdana.ttf", 13.f);
-
-	Settings::SkeetFont = ImGui::GetIO().Fonts->AddFontFromMemoryCompressedTTF(icon_compressed_data, icon_compressed_size, 15.f, &font_config, ranges);
-
-
-	ImGui::StyleColorsClassic();
-	ImGuiStyle* style = &ImGui::GetStyle();
-	ImVec4* colors = style->Colors;
-	style->WindowRounding = 2.0f;
-	style->ScrollbarRounding = 3.0f;
-	style->GrabRounding = 2.0f;
-	style->AntiAliasedLines = true;
-	style->AntiAliasedFill = true;
-	style->WindowRounding = 2;
-	style->ChildRounding = 2;
-	style->ScrollbarSize = 16;
-	style->ScrollbarRounding = 3;
-	style->GrabRounding = 2;
-	style->ItemSpacing.x = 10;
-	style->ItemSpacing.y = 4;
-	style->IndentSpacing = 22;
-	style->FramePadding.x = 6;
-	style->FramePadding.y = 4;
-	style->Alpha = 1.0f;
-	style->FrameRounding = 3.0f;
-
-	colors[ImGuiCol_Text] = ImVec4(0.00f, 0.00f, 0.00f, 1.00f);
-	colors[ImGuiCol_TextDisabled] = ImVec4(0.60f, 0.60f, 0.60f, 1.00f);
-	colors[ImGuiCol_WindowBg] = ImVec4(0.86f, 0.86f, 0.86f, 1.00f);
-	colors[ImGuiCol_ChildBg] = ImVec4(0.00f, 0.00f, 0.00f, 0.00f);
-	colors[ImGuiCol_PopupBg] = ImVec4(0.93f, 0.93f, 0.93f, 0.98f);
-	colors[ImGuiCol_Border] = ImVec4(0.71f, 0.71f, 0.71f, 0.08f);
-	colors[ImGuiCol_BorderShadow] = ImVec4(0.00f, 0.00f, 0.00f, 0.04f);
-	colors[ImGuiCol_FrameBg] = ImVec4(0.71f, 0.71f, 0.71f, 0.55f);
-	colors[ImGuiCol_FrameBgHovered] = ImVec4(0.94f, 0.94f, 0.94f, 0.55f);
-	colors[ImGuiCol_FrameBgActive] = ImVec4(0.71f, 0.78f, 0.69f, 0.98f);
-	colors[ImGuiCol_TitleBg] = ImVec4(0.85f, 0.85f, 0.85f, 1.00f);
-	colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.82f, 0.78f, 0.78f, 0.51f);
-	colors[ImGuiCol_TitleBgActive] = ImVec4(0.78f, 0.78f, 0.78f, 1.00f);
-	colors[ImGuiCol_MenuBarBg] = ImVec4(0.86f, 0.86f, 0.86f, 1.00f);
-	colors[ImGuiCol_ScrollbarBg] = ImVec4(0.20f, 0.25f, 0.30f, 0.61f);
-	colors[ImGuiCol_ScrollbarGrab] = ImVec4(0.90f, 0.90f, 0.90f, 0.30f);
-	colors[ImGuiCol_ScrollbarGrabHovered] = ImVec4(0.92f, 0.92f, 0.92f, 0.78f);
-	colors[ImGuiCol_ScrollbarGrabActive] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
-	colors[ImGuiCol_CheckMark] = ImVec4(0.184f, 0.407f, 0.193f, 1.00f);
-	colors[ImGuiCol_SliderGrab] = ImVec4(0.26f, 0.59f, 0.98f, 0.78f);
-	colors[ImGuiCol_SliderGrabActive] = ImVec4(0.26f, 0.59f, 0.98f, 1.00f);
-	colors[ImGuiCol_Button] = ImVec4(0.71f, 0.78f, 0.69f, 0.40f);
-	colors[ImGuiCol_ButtonHovered] = ImVec4(0.725f, 0.805f, 0.702f, 1.00f);
-	colors[ImGuiCol_ButtonActive] = ImVec4(0.793f, 0.900f, 0.836f, 1.00f);
-	colors[ImGuiCol_Header] = ImVec4(0.71f, 0.78f, 0.69f, 0.31f);
-	colors[ImGuiCol_HeaderHovered] = ImVec4(0.71f, 0.78f, 0.69f, 0.80f);
-	colors[ImGuiCol_HeaderActive] = ImVec4(0.71f, 0.78f, 0.69f, 1.00f);
-	colors[ImGuiCol_Column] = ImVec4(0.39f, 0.39f, 0.39f, 1.00f);
-	colors[ImGuiCol_ColumnHovered] = ImVec4(0.26f, 0.59f, 0.98f, 0.78f);
-	colors[ImGuiCol_ColumnActive] = ImVec4(0.26f, 0.59f, 0.98f, 1.00f);
-	colors[ImGuiCol_Separator] = ImVec4(0.39f, 0.39f, 0.39f, 1.00f);
-	colors[ImGuiCol_SeparatorHovered] = ImVec4(0.14f, 0.44f, 0.80f, 0.78f);
-	colors[ImGuiCol_SeparatorActive] = ImVec4(0.14f, 0.44f, 0.80f, 1.00f);
-	colors[ImGuiCol_ResizeGrip] = ImVec4(1.00f, 1.00f, 1.00f, 0.00f);
-	colors[ImGuiCol_ResizeGripHovered] = ImVec4(0.26f, 0.59f, 0.98f, 0.45f);
-	colors[ImGuiCol_ResizeGripActive] = ImVec4(0.26f, 0.59f, 0.98f, 0.78f);
-	colors[ImGuiCol_PlotLines] = ImVec4(0.39f, 0.39f, 0.39f, 1.00f);
-	colors[ImGuiCol_PlotLinesHovered] = ImVec4(1.00f, 0.43f, 0.35f, 1.00f);
-	colors[ImGuiCol_PlotHistogram] = ImVec4(0.90f, 0.70f, 0.00f, 1.00f);
-	colors[ImGuiCol_PlotHistogramHovered] = ImVec4(1.00f, 0.60f, 0.00f, 1.00f);
-	colors[ImGuiCol_TextSelectedBg] = ImVec4(0.26f, 0.59f, 0.98f, 0.35f);
-	colors[ImGuiCol_ModalWindowDarkening] = ImVec4(0.20f, 0.20f, 0.20f, 0.35f);
-	colors[ImGuiCol_DragDropTarget] = ImVec4(0.26f, 0.59f, 0.98f, 0.95f);
-	colors[ImGuiCol_NavHighlight] = colors[ImGuiCol_HeaderHovered];
-	colors[ImGuiCol_NavWindowingHighlight] = ImVec4(0.70f, 0.70f, 0.70f, 0.70f);
-
-	style->WindowTitleAlign.x = 0.50f;
-	style->FrameRounding = 2.0f;
-
-	p_Object->Release();
+	
 }
 
 // Hmu on discord (Chase.#1803) if you need any help :)
@@ -319,7 +203,7 @@ Vector3 Camera(unsigned __int64 RootComponent)
 void actorLoop() {
 	std::vector<ActorStruct> actorStructVector;
 
-	uintptr_t uWorld = Driver::read<uintptr_t>(pid, BaseAddr + 0x9c9f3b0);
+	uintptr_t uWorld = Driver::read<uintptr_t>(pid, BaseAddr + 0x9cc4570);
 	if (!uWorld) {
 		return;
 	}
@@ -467,7 +351,7 @@ void actorLoop() {
 
 		char dist[64];
 		sprintf_s(dist, "WinSense softaim - [%.1f Fps]\n", ImGui::GetIO().Framerate);
-		ImGui::GetOverlayDrawList()->AddText(ImVec2(8, 2), IM_COL32(255, 255, 255, 255), dist);
+		ImGui::GetOverlayDrawList()->AddText(ImVec2(8, 2), IM_COL32(0, 255, 0, 255), dist);
 
 		if (TeamIndex != LocalTeam) {
 
@@ -500,15 +384,12 @@ void actorLoop() {
 				
 				
 
-				if (Settings::Esp_Line)
-				{
-					ImGui::GetOverlayDrawList()->AddLine(ImVec2(Settings::Majors::Width / 2, Settings::Majors::Height / 2), ImVec2(vHeadBoneOut.x, vHeadBoneOut.y), ImGui::GetColorU32({ Settings::LineESP[0], Settings::LineESP[1], Settings::LineESP[2], 1.0f }), Settings::Thickness);
-				}
+				
 
 				if (Settings::Distance_Esp) {
 					char dist[64];
 					sprintf_s(dist, "[%.f] M", distance);
-					ImGui::GetOverlayDrawList()->AddText(ImVec2(vHeadBoneOut.x - 20, vHeadBoneOut.y), ImGui::GetColorU32({ color.White[0], color.White[1], color.White[2], 4.0f }), dist);
+					ImGui::GetOverlayDrawList()->AddText(ImVec2(vHeadBoneOut.x - 20, vHeadBoneOut.y), ImGui::GetColorU32({ color.Black[0], color.Black[1], color.Black[2], 4.0f }), dist);
 				}
 
 				if (Settings::DrawFOV) {
@@ -544,7 +425,13 @@ void actorLoop() {
 
 
 }
-// Hmu on discord (Chase.#1803) if you need any help :)
+
+
+
+
+
+
+
 void renderLoopCall() {
 
 	ImGui_ImplDX9_NewFrame();
@@ -565,198 +452,210 @@ void renderLoopCall() {
 		Settings::Majors::menuIsOpen = !Settings::Majors::menuIsOpen;
 	}
 
+	if (GetAsyncKeyState(VK_F1) & 1) {
+		Settings::Esp_Line = false;
+		Settings::Distance_Esp = false;
+		Settings::DrawFOV = false;
+		Settings::Box = false;
+	}
+
 	actorLoop();
-
-	ImGuiStyle& style = ImGui::GetStyle();
-	style.Alpha = 1.0f;
-	style.WindowPadding = ImVec2(0, 0);
-	style.WindowMinSize = ImVec2(32, 32);
-	style.WindowRounding = 5;
-	style.WindowTitleAlign = ImVec2(0.0f, 0.5f);
-	//style.ChildWindowRounding = 0.0f;
-	style.FramePadding = ImVec2(4, 3);
-	style.FrameRounding = 0.0f;
-	style.ItemSpacing = ImVec2(8, 8);
-	style.ItemInnerSpacing = ImVec2(8, 8);
-	style.TouchExtraPadding = ImVec2(0, 0);
-	style.IndentSpacing = 21.0f;
-	style.ColumnsMinSpacing = 0.0f;
-	style.ScrollbarSize = 6.0f;
-	style.ScrollbarRounding = 0.0f;
-	style.GrabMinSize = 5.0f;
-	style.GrabRounding = 0.0f;
-	style.ButtonTextAlign = ImVec2(0.0f, 0.5f);
-	style.DisplayWindowPadding = ImVec2(22, 22);
-	style.DisplaySafeAreaPadding = ImVec2(4, 4);
-	style.AntiAliasedLines = true;
-	//style.AntiAliasedShapes = false;
-	style.CurveTessellationTol = 1.f;
-
-	ImVec4* colors = ImGui::GetStyle().Colors;
-	colors[ImGuiCol_Text] = ImVec4(.6f, .6f, .6f, 1.00f); // grey
-	colors[ImGuiCol_TextDisabled] = ImVec4(0.60f, 0.60f, 0.60f, 1.00f);
-	colors[ImGuiCol_TextSelectedBg] = ImVec4(0.00f, 0.00f, 1.00f, 0.35f);
-	colors[ImGuiCol_WindowBg] = ImVec4(10 / 255.f, 9 / 255.f, 13 / 255.f, 1.00f);
-	colors[ImGuiCol_ChildBg] = ImVec4(11 / 255.f, 10 / 255.f, 13 / 255.f, 1.0f);
-	colors[ImGuiCol_PopupBg] = ImVec4(0.05f, 0.05f, 0.10f, 0.90f);
-	colors[ImGuiCol_Border] = ImColor(25, 20, 36, 255); // 149, 20, 255
-	colors[ImGuiCol_BorderShadow] = ImVec4(0.f, 0, 0, 1.00f);
-	colors[ImGuiCol_FrameBg] = ImVec4(0.101, 0.101, 0.101, 1.0f);
-	colors[ImGuiCol_FrameBgHovered] = ImVec4(.6f, .6f, .6f, 0.40f);
-	colors[ImGuiCol_FrameBgActive] = ImVec4(0.20f, 0.25f, 0.30f, 1.0f);
-	colors[ImGuiCol_TitleBg] = ImVec4(0.10f, 0.10f, 0.10f, 1.00f);
-	colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.20f, 0.20f, 0.20f, 1.00f);
-	colors[ImGuiCol_TitleBgActive] = ImVec4(0.20f, 0.20f, 0.20f, 1.00f);
-	colors[ImGuiCol_MenuBarBg] = ImVec4(0.40f, 0.40f, 0.55f, 0.80f);
-	colors[ImGuiCol_ScrollbarBg] = ImVec4(32 / 255.f, 58 / 255.f, 67 / 255.f, 1.f);
-	colors[ImGuiCol_ScrollbarGrab] = ImVec4(149 / 255.f, 20 / 255.f, 225 / 255.f, 1.f);
-	colors[ImGuiCol_ScrollbarGrabHovered] = ImVec4(149 / 255.f, 20 / 255.f, 255 / 255.f, 1.f);
-	colors[ImGuiCol_ScrollbarGrabActive] = ImVec4(149 / 255.f, 20 / 255.f, 255 / 255.f, 1.f);
-	colors[ImGuiCol_Separator] = ImVec4(0.654, 0.094, 0.278, 1.f);
-	colors[ImGuiCol_CheckMark] = ImColor(88, 0, 255, 255);
-	colors[ImGuiCol_SliderGrab] = ImVec4(1.00f, 1.00f, 1.00f, 0.30f);
-	colors[ImGuiCol_SliderGrabActive] = ImVec4(0.80f, 0.50f, 0.50f, 1.00f);
-	colors[ImGuiCol_Button] = ImVec4(0.10f, 0.10f, 0.10f, 1.00f);
-	colors[ImGuiCol_ButtonHovered] = ImColor(84, 0, 123, 255);
-	colors[ImGuiCol_ButtonActive] = ImColor(88, 0, 255, 255);
-	colors[ImGuiCol_Header] = ImColor(112, 0, 164, 255);
-	colors[ImGuiCol_HeaderHovered] = ImVec4(0.26f, 0.26f, 0.26f, 1.f);
-	colors[ImGuiCol_HeaderActive] = ImColor(0.2f, 0.2f, 0.2f, 1.f);
-	colors[ImGuiCol_ResizeGrip] = ImVec4(1.00f, 1.00f, 1.00f, 0.30f);
-	colors[ImGuiCol_ResizeGripHovered] = ImVec4(1.00f, 1.00f, 1.00f, 0.60f);
-	colors[ImGuiCol_ResizeGripActive] = ImVec4(1.00f, 1.00f, 1.00f, 0.90f);
-	colors[ImGuiCol_PlotLines] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
-	colors[ImGuiCol_PlotLinesHovered] = ImVec4(0.90f, 0.70f, 0.00f, 1.00f);
-	colors[ImGuiCol_PlotHistogram] = ImVec4(0.90f, 0.70f, 0.00f, 1.00f);
-	colors[ImGuiCol_PlotHistogramHovered] = ImVec4(1.00f, 0.60f, 0.00f, 1.00f);
-	colors[ImGuiCol_ModalWindowDarkening] = ImVec4(0.20f, 0.20f, 0.20f, 0.35f);
-
 
 	static int tabb = 1;
 
 	if (Settings::Majors::menuIsOpen)
 	{
-		if (ImGui::Begin(z(" WinSense PRV "), 0, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_::ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoSavedSettings))
-			ImGui::SetNextWindowSize(ImVec2({ 500, 550 }), ImGuiSetCond_FirstUseEver); 
+		if (Settings::Majors::menuIsOpen)
 		{
-			ImGui::SetWindowSize(ImVec2(590, 315), ImGuiCond_Once);
-
-			static int tab;
-
-			
-			
-
-			/* {
-
-				if (ImGui::Button(("! aimbot"), ImVec2(120.0f, 30.0f))) tab = 1;
-
-
-
-				ImGui::SameLine();
-				if (ImGui::Button(("$ visuals"), ImVec2(120.0f, 30.0f))) tab = 2;
-
-
-				ImGui::SameLine();
-				if (ImGui::Button(("% misc"), ImVec2(120.0f, 30.0f))) tab = 3;
-
-			}*/
-			ImGuiStyle* style = &ImGui::GetStyle();
-			ImGui::BeginChild(("##Tabs"), ImVec2(-1, 30.0f));
+			if (ImGui::Begin(z(" WinSense PRV "), 0, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_::ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoSavedSettings))
+				ImGui::SetNextWindowSize(ImVec2({ 500, 550 }), ImGuiSetCond_FirstUseEver);
 			{
-				//style->ItemSpacing = ImVec2(1, 1);
-				ImGui::PushFont(Settings::Majors::SkeetFont);
+				ImGui::SetWindowSize(ImVec2(590, 315), ImGuiCond_Once);
+
+
+				ImGuiStyle& style = ImGui::GetStyle();
+				style.Alpha = 1.0f;
+				style.WindowPadding = ImVec2(0, 0);
+				style.WindowMinSize = ImVec2(32, 32);
+				style.WindowRounding = 5;
+				style.WindowTitleAlign = ImVec2(0.0f, 0.5f);
+				//style.ChildWindowRounding = 0.0f;
+				style.FramePadding = ImVec2(4, 3);
+				style.FrameRounding = 0.0f;
+				style.ItemSpacing = ImVec2(8, 8);
+				style.ItemInnerSpacing = ImVec2(8, 8);
+				style.TouchExtraPadding = ImVec2(0, 0);
+				style.IndentSpacing = 21.0f;
+				style.ColumnsMinSpacing = 0.0f;
+				style.ScrollbarSize = 6.0f;
+				style.ScrollbarRounding = 0.0f;
+				style.GrabMinSize = 5.0f;
+				style.GrabRounding = 0.0f;
+				style.ButtonTextAlign = ImVec2(0.0f, 0.5f);
+				style.DisplayWindowPadding = ImVec2(22, 22);
+				style.DisplaySafeAreaPadding = ImVec2(4, 4);
+				style.AntiAliasedLines = true;
+				//style.AntiAliasedShapes = false;
+				style.CurveTessellationTol = 1.f;
+
+				ImVec4* colors = ImGui::GetStyle().Colors;
+				colors[ImGuiCol_Text] = ImVec4(.6f, .6f, .6f, 1.00f); // grey
+				colors[ImGuiCol_TextDisabled] = ImVec4(0.60f, 0.60f, 0.60f, 1.00f);
+				colors[ImGuiCol_TextSelectedBg] = ImVec4(0.00f, 0.00f, 1.00f, 0.35f);
+				colors[ImGuiCol_WindowBg] = ImVec4(10 / 255.f, 9 / 255.f, 13 / 255.f, 1.00f);
+				colors[ImGuiCol_ChildBg] = ImVec4(11 / 255.f, 10 / 255.f, 13 / 255.f, 1.0f);
+				colors[ImGuiCol_PopupBg] = ImVec4(0.05f, 0.05f, 0.10f, 0.90f);
+				colors[ImGuiCol_Border] = ImColor(25, 20, 36, 255); // 149, 20, 255
+				colors[ImGuiCol_BorderShadow] = ImVec4(0.f, 0, 0, 1.00f);
+				colors[ImGuiCol_FrameBg] = ImVec4(0.101, 0.101, 0.101, 1.0f);
+				colors[ImGuiCol_FrameBgHovered] = ImVec4(.6f, .6f, .6f, 0.40f);
+				colors[ImGuiCol_FrameBgActive] = ImVec4(0.20f, 0.25f, 0.30f, 1.0f);
+				colors[ImGuiCol_TitleBg] = ImVec4(0.10f, 0.10f, 0.10f, 1.00f);
+				colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.20f, 0.20f, 0.20f, 1.00f);
+				colors[ImGuiCol_TitleBgActive] = ImVec4(0.20f, 0.20f, 0.20f, 1.00f);
+				colors[ImGuiCol_MenuBarBg] = ImVec4(0.40f, 0.40f, 0.55f, 0.80f);
+				colors[ImGuiCol_ScrollbarBg] = ImVec4(32 / 255.f, 58 / 255.f, 67 / 255.f, 1.f);
+				colors[ImGuiCol_ScrollbarGrab] = ImVec4(149 / 255.f, 20 / 255.f, 225 / 255.f, 1.f);
+				colors[ImGuiCol_ScrollbarGrabHovered] = ImVec4(149 / 255.f, 20 / 255.f, 255 / 255.f, 1.f);
+				colors[ImGuiCol_ScrollbarGrabActive] = ImVec4(149 / 255.f, 20 / 255.f, 255 / 255.f, 1.f);
+				colors[ImGuiCol_Separator] = ImVec4(0.654, 0.094, 0.278, 1.f);
+				colors[ImGuiCol_CheckMark] = ImColor(88, 0, 255, 255);
+				colors[ImGuiCol_SliderGrab] = ImVec4(1.00f, 1.00f, 1.00f, 0.30f);
+				colors[ImGuiCol_SliderGrabActive] = ImVec4(0.80f, 0.50f, 0.50f, 1.00f);
+				colors[ImGuiCol_Button] = ImVec4(0.10f, 0.10f, 0.10f, 1.00f);
+				colors[ImGuiCol_ButtonHovered] = ImColor(84, 0, 123, 255);
+				colors[ImGuiCol_ButtonActive] = ImColor(88, 0, 255, 255);
+				colors[ImGuiCol_Header] = ImColor(112, 0, 164, 255);
+				colors[ImGuiCol_HeaderHovered] = ImVec4(0.26f, 0.26f, 0.26f, 1.f);
+				colors[ImGuiCol_HeaderActive] = ImColor(0.2f, 0.2f, 0.2f, 1.f);
+				colors[ImGuiCol_ResizeGrip] = ImVec4(1.00f, 1.00f, 1.00f, 0.30f);
+				colors[ImGuiCol_ResizeGripHovered] = ImVec4(1.00f, 1.00f, 1.00f, 0.60f);
+				colors[ImGuiCol_ResizeGripActive] = ImVec4(1.00f, 1.00f, 1.00f, 0.90f);
+				colors[ImGuiCol_PlotLines] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
+				colors[ImGuiCol_PlotLinesHovered] = ImVec4(0.90f, 0.70f, 0.00f, 1.00f);
+				colors[ImGuiCol_PlotHistogram] = ImVec4(0.90f, 0.70f, 0.00f, 1.00f);
+				colors[ImGuiCol_PlotHistogramHovered] = ImVec4(1.00f, 0.60f, 0.00f, 1.00f);
+				colors[ImGuiCol_ModalWindowDarkening] = ImVec4(0.20f, 0.20f, 0.20f, 0.35f);
+
+
+
+				static int tab;
+
+
+
+
+				/* {
+
+					if (ImGui::Button(("! aimbot"), ImVec2(120.0f, 30.0f))) tab = 1;
+
+
+
+					ImGui::SameLine();
+					if (ImGui::Button(("$ visuals"), ImVec2(120.0f, 30.0f))) tab = 2;
+
+
+					ImGui::SameLine();
+					if (ImGui::Button(("% misc"), ImVec2(120.0f, 30.0f))) tab = 3;
+
+				}*/
+				ImGuiStyle* style = &ImGui::GetStyle();
+				ImGui::BeginChild(("##Tabs"), ImVec2(-1, 30.0f));
 				{
-					if (ImGui::Button(((" Aimbot")), ImVec2(190, 25)))
+					//style->ItemSpacing = ImVec2(1, 1);
+					ImGui::PushFont(Settings::Majors::SkeetFont);
 					{
-						tab = 1;
-					}ImGui::SameLine();
-					if (ImGui::Button(((" Visuals")), ImVec2(190, 25)))
-					{
-						tab = 2;
-					}ImGui::SameLine();
-					//if (ImGui::Button(((" Misc")), ImVec2(190, 25)))
-					//{
-					//	tab = 3;
-					//}ImGui::SameLine();
-				} ImGui::PopFont();
+						if (ImGui::Button(((" Aimbot")), ImVec2(190, 25)))
+						{
+							tab = 1;
+						}ImGui::SameLine();
+						if (ImGui::Button(((" Visuals")), ImVec2(190, 25)))
+						{
+							tab = 2;
+						}ImGui::SameLine();
+						//if (ImGui::Button(((" Misc")), ImVec2(190, 25)))
+						//{
+						//	tab = 3;
+						//}ImGui::SameLine();
+					} ImGui::PopFont();
 
-			} ImGui::EndChild();
-
-
-			
-			if (tab == 1)
-			{
-				ImGui::BeginChild(("##Aimbot"), ImVec2(0, 0), true); {
+				} ImGui::EndChild();
 
 
-					ImGui::Checkbox(z("Enable Aimbot"), &Settings::Aimbot);
 
-					ImGui::Checkbox(z("bBox"), &Settings::Box);
+				if (tab == 1)
+				{
+					ImGui::BeginChild(("##Aimbot"), ImVec2(0, 0), true); {
 
-					ImGui::Text(z("Aimbot Key:   ")); ImGui::SameLine(110.f);
-					HotkeyButton(hotkeys::aimkey, ChangeKey, keystatus);
 
-					ImGui::Checkbox(z("Draw FOV"), &Settings::DrawFOV);
+						ImGui::Checkbox(z("Enable Aimbot"), &Settings::Aimbot);
 
-					ImGui::SliderFloat(z(" "), &Settings::AimbotFOVValue, 10, 275);
+						ImGui::Checkbox(z("bBox"), &Settings::Box);
 
-					ImGui::Text("FOV Slider^");
+						ImGui::Text(z("Aimbot Key:   ")); ImGui::SameLine(110.f);
+						HotkeyButton(hotkeys::aimkey, ChangeKey, keystatus);
 
-					ImGui::SliderFloat(z("   "), &Settings::AimbotDistance, 10, 275);
+						ImGui::Checkbox(z("Draw FOV"), &Settings::DrawFOV);
 
-					ImGui::Text("Aimbot Distance ^");
+						ImGui::SliderFloat(z(" "), &Settings::AimbotFOVValue, 10, 275);
 
-					ImGui::SliderFloat(z("                                                      x"), &Settings::AimbotSmoothingValue, 1, 30);
+						ImGui::Text("FOV Slider^");
 
-					ImGui::Text("Smoothness ^");
+						ImGui::SliderFloat(z("   "), &Settings::AimbotDistance, 10, 275);
+
+						ImGui::Text("Aimbot Distance ^");
+
+						ImGui::SliderFloat(z("                                                      x"), &Settings::AimbotSmoothingValue, 1, 30);
+
+						ImGui::Text("Smoothness ^");
+					}
+					ImGui::EndChild();
+
+
 				}
-				ImGui::EndChild();
+				if (tab == 2)
+				{
 
+					ImGui::BeginChild(("##Visuals"), ImVec2(0, 0), true); {
+
+						ImGui::Checkbox(z("Enable Box Esp"), &Settings::Box);
+
+						ImGui::Checkbox(z("Distance "), &Settings::Distance_Esp);
+
+						ImGui::Checkbox(z("Lines "), &Settings::Esp_Line);
+
+						ImGui::Text(z("Aimbot Bone: "));
+
+						ImGui::Combo(z("##BONES"), &Settings::hitbox, Hitbox, IM_ARRAYSIZE(Hitbox));
+
+
+						ImGui::Text(z("Aimbot Bone: "));
+
+						ImGui::Combo(z("##NIGGA"), &Settings::bBoxMode, boxStyle, IM_ARRAYSIZE(boxStyle));
+
+						ImGui::SliderFloat(z("Esp Distance"), &Settings::EspDistance, 10, 275);
+
+
+					}
+					ImGui::EndChild();
+				}
+				/*if (tab == 3)
+				{
+
+					ImGui::BeginChild(("##Misc"), ImVec2(0, 0), true); {
+						ImGui::Checkbox(z("Crosshair"), &Settings::Cross_Hair);
+						ImGui::Checkbox(z("Lockline"), &Settings::Lock_Line);
+						//ImGui::Checkbox(z("Auto Lock-Pos Switch"), &Settings::Auto_Bone_Switch);
+						ImGui::Checkbox(z("Trigger-Bot"), &Settings::Auto_Fire);
+
+
+
+					}
+					ImGui::EndChild();
+				}*/
 
 			}
-			if (tab == 2)
-			{
-
-				ImGui::BeginChild(("##Visuals"), ImVec2(0, 0), true); {
-
-					ImGui::Checkbox(z("Enable Box Esp"), &Settings::Box);
-
-					ImGui::Checkbox(z("Distance "), &Settings::Distance_Esp);
-
-					ImGui::Checkbox(z("Lines "), &Settings::Esp_Line);
-
-					ImGui::Text(z("Aimbot Bone: "));
-
-					ImGui::Combo(z("##BONES"), &Settings::hitbox, Hitbox, IM_ARRAYSIZE(Hitbox));
-
-
-					ImGui::Text(z("Aimbot Bone: "));
-
-					ImGui::Combo(z("##NIGGA"), &Settings::bBoxMode, boxStyle, IM_ARRAYSIZE(boxStyle));
-
-					ImGui::SliderFloat(z("Esp Distance"), &Settings::EspDistance, 10, 275);
-
-
-				}
-				ImGui::EndChild();
-			}
-			/*if (tab == 3)
-			{
-
-				ImGui::BeginChild(("##Misc"), ImVec2(0, 0), true); {
-					ImGui::Checkbox(z("Crosshair"), &Settings::Cross_Hair);
-					ImGui::Checkbox(z("Lockline"), &Settings::Lock_Line);
-					//ImGui::Checkbox(z("Auto Lock-Pos Switch"), &Settings::Auto_Bone_Switch);
-					ImGui::Checkbox(z("Trigger-Bot"), &Settings::Auto_Fire);
-
-
-				
-				}
-				ImGui::EndChild();
-			}*/
-
+			ImGui::End();
 		}
-		ImGui::End();
 	}
 	else {
 	}
@@ -1017,7 +916,7 @@ bool verify_game() {
 // Hmu on discord (Chase.#1803) if you need any help :)
 int main()
 {
-	randomize();
+	
 	LoadProtectedFunctions();
 	Protect(LoadProtectedFunctions);
 	Unprotect(Driver::initialize);
@@ -1048,12 +947,13 @@ int main()
 	SetupWindow();
 	DirectXInit(MyWnd);
 	verify_game();
+	::ShowWindow(::GetConsoleWindow(), SW_HIDE);
 	std::cout << "" << std::endl;
 
 	Beep(500, 500);
 	while (TRUE)
 	{
-		randomize();
+		
 		MainLoop();
 	}
 

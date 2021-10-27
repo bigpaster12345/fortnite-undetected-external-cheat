@@ -94,5 +94,11 @@
     <ClInclude Include="xD.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="xor.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="d3dx9.lib" />
   </ItemGroup>
 </Project>
